@@ -1,0 +1,26 @@
+{
+  "type": "module",
+  "name": "songbook",
+  "version": "20.10.0",
+  "description": "Songbook connected to a DB",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GBM1986/Nodeproject-Songbook.git"
+  },
+  "keywords": [
+    "songs"
+  ],
+  "author": "GBM",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GBM1986/Nodeproject-Songbook/issues"
+  },
+  "homepage": "https://github.com/GBM1986/Nodeproject-Songbook#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
