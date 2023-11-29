@@ -1,10 +1,10 @@
-import express from 'express';
+import express from 'express'
 import db from './config/db.config.js'
-import dotenv from 'dotenv';
-import { error } from 'console';
+import dotenv from 'dotenv'
+
 dotenv.config();
 
-const express = require('express');
+// const express = require('express');
 const app = express();
 
 
