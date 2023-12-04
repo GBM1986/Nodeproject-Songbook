@@ -1,4 +1,3 @@
-import { error } from 'console';
 import db from '../config/db.config.js'
 
 class SongController {
@@ -14,9 +13,10 @@ class SongController {
                         ON s.artist_id = a.id`
         db.query(sql, (error, result) => {
             if(error) {
-                console.error(error)
+                console.error(error);
+                return res.status(500).jston({error: 'Internal Server Error'})
             } else {
-                return res.json(result)
+                return res.json(result);
             }
         })
     }
@@ -32,9 +32,29 @@ class SongController {
                         WHERE s.id = ${id}`
         db.query(sql,(error,result) => {
             if(error) {
+                console.error(error);
+                return res.status(500).json({ error: 'Internal Server Error'})
+            } else { 
+                if (result.length === 0) {
+                    return res.status(404).json({ error: 'Song details not found' });
+                  }
+                return res.json(result[0])
+            }
+        })
+    }
+    
+    create = (req, res) => {
+        const { title, content, artist_id } = req.body
+        const sql = `INSERT INTO song (title, content, artist_id)
+                        VALUES (?,?,?)`
+        db.query(sql, [title,content, artist],(error, result) =>{
+            if(error) {
                 console.error(error)
             } else {
-                return res.json(result)
+                return res.json({
+                    message: 'New song created',
+                    newID: result.insertId
+                })
             }
         })
     }

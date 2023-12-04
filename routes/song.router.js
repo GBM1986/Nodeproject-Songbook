@@ -15,4 +15,8 @@ router.get('/songs/:id([0-9]*)', (req,res) => {
     controller.details(req,res)
 })
 
+router.post('/songs', (req,res) => {
+    controller.create('Posting new song')
+})
+
 export { router as SongRouter}
