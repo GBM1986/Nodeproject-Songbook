@@ -47,7 +47,7 @@ class SongController {
         const { title, content, artist_id } = req.body
         const sql = `INSERT INTO song (title, content, artist_id)
                         VALUES (?,?,?)`
-        db.query(sql, [title,content, artist],(error, result) =>{
+        db.query(sql, [title,content, artist_id],(error, result) =>{
             if(error) {
                 console.error(error)
             } else {

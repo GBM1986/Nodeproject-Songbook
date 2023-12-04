@@ -12,7 +12,7 @@ class ArtistController {
         db.query(sql, (error, result) => {
             if(error) {
                 console.error(error);
-                return res.status(500).jston({error: 'Internal Server Error'})
+                return res.status(500).json({error: 'Internal Server Error'})
             } else {
                 return res.json(result);
             }

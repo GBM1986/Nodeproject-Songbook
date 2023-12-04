@@ -7,14 +7,14 @@ class SearchController {
 
     search = async (req, res) => {
         try {
-          const keyword = req.params.keyword || req.query.keyword || req.body.keyword;
+          const {keyword} = req.query;
     
-          // Validate if keyword is provided
+         
           if (!keyword) {
             return res.status(400).json({ error: 'Keyword is required for search.' });
           }
     
-          // Call the model to perform the search
+      
           const results = await SongModel.search(keyword);
     
           // Return the results

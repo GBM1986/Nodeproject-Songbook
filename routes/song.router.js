@@ -17,6 +17,7 @@ router.get('/songs/:id([0-9]*)', (req,res) => {
 
 router.post('/songs', (req,res) => {
     controller.create('Posting new song')
+    console.log('Route til at oprette en sang med', req.body)
 })
 
 export { router as SongRouter}
